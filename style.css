@@ -68,9 +68,14 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
-  z-index: 10;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(16, 7, 27, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
 }
 .brand {
   display: inline-flex;
@@ -466,13 +471,13 @@ h2 {
 }
 .game-image {
   position: relative;
-  aspect-ratio: 1.05/1;
+  aspect-ratio: 9 / 16;
   overflow: hidden;
   border-radius: 6px;
   background: #29103a;
 }
 .game-large .game-image {
-  aspect-ratio: 2.1/1;
+  aspect-ratio: 9 / 16;
 }
 .game-image img {
   width: 100%;
@@ -768,8 +773,8 @@ h2 {
     grid-column: span 1;
   }
   .game-large .game-image {
-    aspect-ratio: 1.05/1;
-  }
+  aspect-ratio: 9 / 16;
+}
   .team-panel {
     grid-template-columns: 0.7fr 1.3fr;
   }
@@ -1038,4 +1043,135 @@ h2 {
     opacity: 1;
     transform: none;
   }
+}
+
+/* Custom edits */
+.team-logo-standalone {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 15px;
+}
+.partner-link {
+  transition: transform 0.2s, opacity 0.2s;
+  display: inline-block;
+}
+.partner-link:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
+}
+
+/* 4. Tăng thêm 30% cho các phần text nhỏ nhất */
+.eyebrow,
+.section-kicker,
+.tiny-label {
+  font-size: 13px !important;
+}
+.art-chip {
+  font-size: 12px !important;
+}
+.scroll-cue {
+  font-size: 12px !important;
+}
+.cap-number {
+  font-size: 14px !important;
+}
+.game-type {
+  font-size: 11px !important;
+}
+.game-meta {
+  font-size: 12px !important;
+}
+.portfolio-note {
+  font-size: 13px !important;
+}
+.member-index {
+  font-size: 13px !important;
+}
+.member-role {
+  font-size: 14px !important;
+}
+.contact-label {
+  font-size: 13px !important;
+}
+.footer {
+  font-size: 13px !important;
+}
+
+
+/* PARTNER SECTION - Phong cách đồng bộ với Contact Cards */
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 10px;
+}
+.partner-card {
+  background: linear-gradient(140deg, rgba(46, 22, 64, 0.7), rgba(23, 10, 34, 0.8));
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  transition: transform 0.25s, border-color 0.25s, background 0.25s;
+}
+.partner-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(214, 126, 255, 0.45);
+  background: linear-gradient(140deg, rgba(56, 26, 78, 0.8), rgba(30, 13, 44, 0.9));
+}
+.partner-card-label {
+  font-size: 10px;
+  color: var(--yellow);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  margin-bottom: 12px;
+}
+.partner-card-name {
+  font: 700 28px "Space Grotesk";
+  letter-spacing: -0.05em;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.partner-card-name span {
+  font-size: 11px;
+  vertical-align: top;
+  color: var(--yellow);
+}
+.partner-card-name.crazylabs {
+  color: #ffcb4d;
+}
+.partner-card-desc {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+
+/* Tăng khoảng cách phía trên cho phần Publishing Partners để không bị dính sát */
+.partner-section-wrap {
+  margin-top: 60px;
+}
+
+
+/* 1. Tăng kích thước phần mô tả của các game trong 02 / SELECTED WORK (.game-info p) lên to hơn */
+.game-info p {
+  font-size: 13px !important; /* tăng từ 11px lên 13px */
+  line-height: 1.5;
+}
+.game-info h3 {
+  font-size: 18px !important; /* tăng tiêu đề game lên chút cho cân đối */
+}
+
+/* 2. Tăng kích thước Games launched / Publishing partners / Our journey began (.hero-stats) */
+.hero-stats strong {
+  font-size: 34px !important; /* tăng số liệu thống kê */
+}
+.hero-stats small {
+  font-size: 12px !important; /* tăng chú thích bên dưới số liệu */
+  color: #c4b5d2 !important;
 }
